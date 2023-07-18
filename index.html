@@ -26,14 +26,14 @@
     </style>
 </head>
 <body>
-    <h1>Station 25</h1>
+    <h1>Sullage Pump</h1>
     <div id="question"></div>
     <div id="options"></div>
     <button onclick="nextQuestion()">SUBMIT</button>
     <script>
         // Function to clear the quiz score from local storage
 function clearQuizScore() {
-    localStorage.removeItem("Station_25_Score");
+    localStorage.removeItem("Sullage_Pump");
 }
 
 // Function to clear local storage when the tab is closed or refreshed
@@ -50,13 +50,13 @@ function startTimer() {
         const quiz = [
             {
                 question: "Can you give me some information about what rock serves as an aquifer for the water?",
-                options: ["Travertine", "Red sandstone"],
+                options: ["Travertine", "Red Sandstone"],
                 answer: 1
             }
         ];
 
         let currentQuestion = 0;
-        let Station_25_Score = 0;
+        let Sullage_Pump = 0;
 
         // Function to display current question
         function displayQuestion() {
@@ -99,9 +99,9 @@ function startTimer() {
     }
 
     if (!isAnswered || selectedOption !== quiz[currentQuestion].answer) {
-        Station_25_Score = 0; // Assign zero score if question is not attempted or answered incorrectly
+        Sullage_Pump = 0; // Assign zero score if question is not attempted or answered incorrectly
     } else {
-        Station_25_Score++; // Increment score for correct answer
+        Sullage_Pump++; // Increment score for correct answer
     }
 }
 
@@ -112,8 +112,8 @@ function startTimer() {
 
             if (currentQuestion === quiz.length) {
                 // All questions answered, store score in local storage
-                localStorage.setItem("Station_25_Score", Station_25_Score);
-                alert("Quiz completed. Your score is " + Station_25_Score);
+                localStorage.setItem("Sullage_Pump", Sullage_Pump);
+                alert("Quiz completed. Your score is " + Sullage_Pump);
             } else {
                 displayQuestion();
             }
